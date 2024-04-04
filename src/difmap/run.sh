@@ -15,7 +15,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-cp ../data/uvfits/*.uvfits .
+
+mkdir -p difmap-output
+cp ../../data_validation/data/uvfits/*.uvfits .
 for f in *.uvfits; do
     ./difmap.sh $f
 done
