@@ -9,12 +9,13 @@
 # To save .pdf of image summary statistics, uncomment --imsum (This doesn't work currently)
 #
 
+mkdir -p ../output
+
 echo "=============== Beginning EHT-Imaging Pipeline Execution ========================="
-cd scripts
 for d in 095 096 100 101; do
     python eht-imaging_pipeline.py \
-        -i  ../data/uvfits/SR1_M87_2017_${d}_lo_hops_netcal_StokesI.uvfits \
-        -i2 ../data/uvfits/SR1_M87_2017_${d}_hi_hops_netcal_StokesI.uvfits \
+        -i  ../../data_validation/data/uvfits/SR1_M87_2017_${d}_lo_hops_netcal_StokesI.uvfits \
+        -i2 ../../data_validation/data/uvfits/SR1_M87_2017_${d}_hi_hops_netcal_StokesI.uvfits \
         -o  ../output/SR1_M87_2017_${d}.fits \
        --savepdf \
        --imgsum
@@ -24,4 +25,3 @@ echo "                                                                          
 echo "================ Beginning EHT-Imaging Post-processing ==========================="
 bash run-postprocessing.sh
 echo "================ Completed EHT-Imaging Post-processing ==========================="
-cd ~
