@@ -10,6 +10,8 @@
 # ('-t', '--notitle'   , default=False, help="display with no title")
 # ('-a', '--all'       , default=False, help="perform all post-processing steps")
 
+mkdir -p post
+
 # Traverse output dir and apply post-processing to each .fits file
 for d in 095 096 100 101; do
     python smili_postprocessing.py \
@@ -28,9 +30,9 @@ done
 #python smili_postprocessing.py \
 #    -i  ./smili_reconstructions/SR1_M87_2017_101_hi_hops_netcal_StokesI.fits \
 #    -o  ./post/SR1_M87_2017_101_afmhot10us.pdf \
-#    --afmhot10us --notitle 
+#    --afmhot10us --notitle
 
 #python smili_postprocessing.py \
 #    -i  ./smili_reconstructions/SR1_M87_2017_101_hi_hops_netcal_StokesI.fits \
 #    -o  ./post/SR1_M87_2017_101_afmhot10us_blur.pdf \
-#    --blur --notitle --afmhot10us --beam 
+#    --blur --notitle --afmhot10us --beam
